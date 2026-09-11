@@ -1,6 +1,3 @@
-Replace your entire `index.html` with the version below:
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,17 +8,171 @@ Replace your entire `index.html` with the version below:
 
     <style>
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: Arial, sans-serif;
-            background: #f7f5ef;
+            background: #f3eafa;
             color: #30332e;
-            line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* NAVIGATION */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 8%;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 10px rgba(80, 50, 100, 0.08);
+        }
+
+        nav .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #7b5aa6;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #444;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #9b70c5;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 20px;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(198, 164, 230, 0.45), transparent 25%),
+                radial-gradient(circle at 80% 70%, rgba(220, 194, 245, 0.45), transparent 25%),
+                #f3eafa;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 8vw, 90px);
+            letter-spacing: 5px;
+            color: #5d4676;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #6d6075;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 30px;
+            background: #8e6bb0;
+            color: white;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .hero button:hover {
+            background: #725394;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 32px;
+            color: #5d4676;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            background: rgba(255, 255, 255, 0.55);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(80, 50, 100, 0.12);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #6c4e89;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* ABOUT */
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #e8d9f3;
+        }
+
+        .contact p {
+            margin-bottom: 10px;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #5d4676;
+            color: white;
+            font-size: 13px;
         }
 
         /* FALLING SNOW */
@@ -45,18 +196,17 @@ Replace your entire `index.html` with the version below:
         .flower {
             position: fixed;
             bottom: -50px;
-            color: #b79ad8;
-            font-size: 22px;
+            color: #b18bd2;
             pointer-events: none;
-            z-index: 1;
-            opacity: 0.45;
+            z-index: 2;
+            opacity: 0;
             animation: floatFlower linear forwards;
-            filter: blur(0.2px);
+            text-shadow: 0 0 5px rgba(150, 100, 190, 0.2);
         }
 
         @keyframes floatFlower {
             0% {
-                transform: translateY(0) rotate(0deg);
+                transform: translateY(0) translateX(0) rotate(0deg);
                 opacity: 0;
             }
 
@@ -65,214 +215,16 @@ Replace your entire `index.html` with the version below:
             }
 
             50% {
-                transform: translateY(-50vh) translateX(25px) rotate(180deg);
+                transform: translateY(-50vh) translateX(30px) rotate(180deg);
+                opacity: 0.4;
             }
 
             100% {
-                transform: translateY(-115vh) translateX(-25px) rotate(360deg);
+                transform: translateY(-115vh) translateX(-30px) rotate(360deg);
                 opacity: 0;
             }
         }
 
-        /* NAVIGATION */
-        nav {
-            background: #f7f5ef;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            border-bottom: 1px solid #ddd9ce;
-        }
-
-        .logo {
-            font-size: 20px;
-            font-weight: bold;
-            letter-spacing: 2px;
-        }
-
-        nav a {
-            color: #30332e;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 14px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        /* HOME */
-        .hero {
-            min-height: 70vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 20px;
-        }
-
-        .hero h1 {
-            font-family: Georgia, serif;
-            font-size: 64px;
-            letter-spacing: 5px;
-            margin-bottom: 20px;
-        }
-
-        .hero p {
-            font-size: 16px;
-            letter-spacing: 2px;
-            color: #77776f;
-            margin-bottom: 30px;
-        }
-
-        .hero-button {
-            display: inline-block;
-            padding: 13px 28px;
-            border: 1px solid #30332e;
-            color: #30332e;
-            text-decoration: none;
-            font-size: 14px;
-            letter-spacing: 1px;
-            transition: 0.3s;
-        }
-
-        .hero-button:hover {
-            background: #30332e;
-            color: white;
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 75px 8%;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: Georgia, serif;
-            font-size: 34px;
-            margin-bottom: 15px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #77776f;
-            margin-bottom: 45px;
-        }
-
-        /* PORTFOLIO */
-        .portfolio {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: white;
-            border: 1px solid #e1ded5;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card img {
-            width: 100%;
-            height: 280px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .card-content {
-            padding: 22px;
-        }
-
-        .card h3 {
-            font-family: Georgia, serif;
-            margin-bottom: 8px;
-        }
-
-        .card p {
-            font-size: 14px;
-            color: #77776f;
-        }
-
-        /* ABOUT */
-        .about {
-            max-width: 850px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .about p {
-            color: #62635c;
-            margin-top: 20px;
-        }
-
-        /* CONTACT */
-        .contact {
-            text-align: center;
-            background: #e9e6dc;
-        }
-
-        .contact p {
-            margin: 12px 0;
-        }
-
-        .contact a {
-            color: #30332e;
-            font-weight: bold;
-            text-decoration: none;
-        }
-
-        /* FOOTER */
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #30332e;
-            color: white;
-            font-size: 13px;
-        }
-
-        /* MOBILE */
-        @media (max-width: 600px) {
-
-            nav {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav a {
-                margin-left: 8px;
-                margin-right: 8px;
-            }
-
-            .hero {
-                min-height: 60vh;
-            }
-
-            .hero h1 {
-                font-size: 38px;
-                letter-spacing: 3px;
-            }
-
-            .hero p {
-                font-size: 13px;
-            }
-
-            section {
-                padding: 55px 6%;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-        }
     </style>
 </head>
 
@@ -290,9 +242,8 @@ Replace your entire `index.html` with the version below:
         </div>
     </nav>
 
-
     <!-- HOME -->
-    <header id="home" class="hero">
+    <section class="hero" id="home">
 
         <h1>SET THE MEMORIES</h1>
 
@@ -300,127 +251,81 @@ Replace your entire `index.html` with the version below:
             Digital Invitations · Creative Design · AI Artistry
         </p>
 
-        <a href="#portfolio" class="hero-button">
-            VIEW MY WORK
+        <a href="#portfolio">
+            <button>VIEW MY WORK</button>
         </a>
 
-    </header>
-
+    </section>
 
     <!-- PORTFOLIO -->
-    <section id="portfolio">
+    <section class="portfolio" id="portfolio">
 
-        <h2 class="section-title">Featured Works</h2>
+        <h2>My Portfolio</h2>
 
-        <p class="section-subtitle">
-            A collection of creative ideas transformed into visual experiences.
-        </p>
-
-        <div class="portfolio">
+        <div class="portfolio-grid">
 
             <div class="card">
                 <img src="invitation1.jpg" alt="Digital Invitation">
-
-                <div class="card-content">
-                    <h3>Digital Invitations</h3>
-
-                    <p>
-                        Elegant and personalized digital invitations
-                        created for special celebrations.
-                    </p>
-                </div>
+                <h3>Digital Invitations</h3>
+                <p>Creative and elegant digital invitations.</p>
             </div>
-
 
             <div class="card">
-                <img src="ai-art1.jpg" alt="AI Artwork">
-
-                <div class="card-content">
-                    <h3>AI Artistry</h3>
-
-                    <p>
-                        Creative AI-assisted visuals, concepts,
-                        characters, and imaginative scenes.
-                    </p>
-                </div>
+                <img src="ai-art1.jpg" alt="AI Art">
+                <h3>AI Artistry</h3>
+                <p>Creative AI-generated artwork and concepts.</p>
             </div>
-
 
             <div class="card">
                 <img src="design1.jpg" alt="Creative Design">
-
-                <div class="card-content">
-                    <h3>Creative Design</h3>
-
-                    <p>
-                        Visual designs created for personal,
-                        social media, and creative projects.
-                    </p>
-                </div>
+                <h3>Creative Design</h3>
+                <p>Simple and aesthetic digital designs.</p>
             </div>
-
 
             <div class="card">
                 <img src="social1.jpg" alt="Social Media Design">
-
-                <div class="card-content">
-                    <h3>Social Media</h3>
-
-                    <p>
-                        Engaging visual content designed for
-                        digital platforms and online audiences.
-                    </p>
-                </div>
+                <h3>Social Media</h3>
+                <p>Visual content for social media platforms.</p>
             </div>
 
         </div>
 
     </section>
-
 
     <!-- ABOUT -->
     <section id="about">
 
+        <h2>About Me</h2>
+
         <div class="about">
 
-            <h2 class="section-title">About Me</h2>
-
             <p>
-                I'm RDigitals, a creative designer who enjoys turning
-                ideas into clean, meaningful, and visually engaging
-                designs.
+                Welcome to RDigitals — a creative space where memories,
+                ideas, and imagination come together.
             </p>
 
             <p>
-                My work includes digital invitations, creative
-                visual concepts, and AI-assisted artwork. I enjoy
-                exploring different styles while keeping every
-                project personal and purposeful.
+                I create digital invitations, creative designs,
+                AI artwork, and visual content designed to make
+                special moments more memorable.
             </p>
 
         </div>
 
     </section>
 
-
     <!-- CONTACT -->
-    <section id="contact" class="contact">
+    <section class="contact" id="contact">
 
-        <h2 class="section-title">Let's Create Something.</h2>
+        <h2>Let's Create Something</h2>
 
-        <p>
-            Have an idea, celebration, or creative project in mind?
-        </p>
+        <p>For inquiries and collaborations:</p>
 
         <p>
-            📧
-            <a href="mailto:ronalyncortez286@gmail.com">
-                ronalyncortez286@gmail.com
-            </a>
+            <strong>ronalyncortez286@gmail.com</strong>
         </p>
 
     </section>
-
 
     <!-- FOOTER -->
     <footer>
@@ -428,44 +333,64 @@ Replace your entire `index.html` with the version below:
     </footer>
 
 
-    <!-- SNOW + FLOWERS -->
+    <!-- ANIMATIONS -->
     <script>
 
         /* SNOW */
+
         function createSnow() {
+
             const snow = document.createElement("div");
 
             snow.className = "snow";
             snow.innerHTML = "❄";
 
             snow.style.left = Math.random() * 100 + "vw";
-            snow.style.fontSize = (8 + Math.random() * 14) + "px";
-            snow.style.opacity = 0.3 + Math.random() * 0.7;
-            snow.style.animationDuration = (5 + Math.random() * 7) + "s";
+
+            snow.style.fontSize =
+                (8 + Math.random() * 14) + "px";
+
+            snow.style.opacity =
+                0.3 + Math.random() * 0.7;
+
+            snow.style.animationDuration =
+                (5 + Math.random() * 7) + "s";
 
             document.body.appendChild(snow);
 
             setTimeout(() => {
                 snow.remove();
             }, 13000);
+
         }
 
         setInterval(createSnow, 300);
 
 
         /* LAVENDER FLOWERS */
+
         function createFlower() {
+
             const flower = document.createElement("div");
 
             flower.className = "flower";
 
-            const flowers = ["✿", "❀", "✾", "❁"];
+            const flowers = [
+                "✿",
+                "❀",
+                "✾",
+                "❁"
+            ];
 
             flower.innerHTML =
                 flowers[Math.floor(Math.random() * flowers.length)];
 
-            flower.style.left = Math.random() * 100 + "vw";
-            flower.style.fontSize = (14 + Math.random() * 14) + "px";
+            flower.style.left =
+                Math.random() * 100 + "vw";
+
+            flower.style.fontSize =
+                (14 + Math.random() * 14) + "px";
+
             flower.style.animationDuration =
                 (10 + Math.random() * 8) + "s";
 
@@ -474,6 +399,7 @@ Replace your entire `index.html` with the version below:
             setTimeout(() => {
                 flower.remove();
             }, 19000);
+
         }
 
         setInterval(createFlower, 1800);
@@ -482,4 +408,3 @@ Replace your entire `index.html` with the version below:
 
 </body>
 </html>
-```
