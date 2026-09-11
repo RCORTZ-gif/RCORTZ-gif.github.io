@@ -50,34 +50,45 @@
             text-decoration: underline;
         }
 
-        /* HERO */
+        /* HOME */
         .hero {
-            width: 100%;
-            padding: 0;
-            margin: 0;
-        }
-
-        .hero img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .hero-text {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            padding: 45px 20px;
+            padding: 60px 20px;
         }
 
-        .hero-text h1 {
+        .hero h1 {
             font-family: Georgia, serif;
-            font-size: 42px;
-            letter-spacing: 3px;
-            margin-bottom: 12px;
+            font-size: 64px;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
         }
 
-        .hero-text p {
-            font-size: 15px;
+        .hero p {
+            font-size: 16px;
+            letter-spacing: 2px;
+            color: #77776f;
+            margin-bottom: 30px;
+        }
+
+        .hero-button {
+            display: inline-block;
+            padding: 13px 28px;
+            border: 1px solid #30332e;
+            color: #30332e;
+            text-decoration: none;
+            font-size: 14px;
             letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .hero-button:hover {
+            background: #30332e;
+            color: white;
         }
 
         /* SECTIONS */
@@ -183,12 +194,21 @@
             }
 
             nav a {
-                margin-left: 10px;
-                margin-right: 10px;
+                margin-left: 8px;
+                margin-right: 8px;
             }
 
-            .hero-text h1 {
-                font-size: 30px;
+            .hero {
+                min-height: 60vh;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+                letter-spacing: 3px;
+            }
+
+            .hero p {
+                font-size: 13px;
             }
 
             section {
@@ -218,20 +238,17 @@
 
 
     <!-- HOME -->
-    <header id="home">
+    <header id="home" class="hero">
 
-        <!-- YOUR CANVA BANNER -->
-        <div class="hero">
-            <img src="banner.png" alt="Ronalyn Cortez Creative Portfolio">
-        </div>
+        <h1>SET THE MOMENT.</h1>
 
-        <div class="hero-text">
-            <h1>SET THE MOMENT.</h1>
+        <p>
+            Digital Invitations · Creative Design · AI Artistry
+        </p>
 
-            <p>
-                Digital Invitations · Creative Design · AI Artistry
-            </p>
-        </div>
+        <a href="#portfolio" class="hero-button">
+            VIEW MY WORK
+        </a>
 
     </header>
 
@@ -247,11 +264,12 @@
 
         <div class="portfolio">
 
-            <!-- PROJECT 1 -->
             <div class="card">
                 <img src="invitation1.jpg" alt="Digital Invitation">
+
                 <div class="card-content">
                     <h3>Digital Invitations</h3>
+
                     <p>
                         Elegant and personalized digital invitations
                         created for special celebrations.
@@ -259,11 +277,13 @@
                 </div>
             </div>
 
-            <!-- PROJECT 2 -->
+
             <div class="card">
                 <img src="ai-art1.jpg" alt="AI Artwork">
+
                 <div class="card-content">
                     <h3>AI Artistry</h3>
+
                     <p>
                         Creative AI-assisted visuals, concepts,
                         characters, and imaginative scenes.
@@ -271,11 +291,13 @@
                 </div>
             </div>
 
-            <!-- PROJECT 3 -->
+
             <div class="card">
-                <img src="design1.jpg" alt="Graphic Design">
+                <img src="design1.jpg" alt="Creative Design">
+
                 <div class="card-content">
                     <h3>Creative Design</h3>
+
                     <p>
                         Visual designs created for personal,
                         social media, and creative projects.
@@ -283,11 +305,13 @@
                 </div>
             </div>
 
-            <!-- PROJECT 4 -->
+
             <div class="card">
                 <img src="social1.jpg" alt="Social Media Design">
+
                 <div class="card-content">
                     <h3>Social Media</h3>
+
                     <p>
                         Engaging visual content designed for
                         digital platforms and online audiences.
@@ -315,9 +339,9 @@
 
             <p>
                 My work includes digital invitations, creative
-                visual concepts, Canva designs, and AI-assisted
-                artwork. I enjoy exploring different styles while
-                keeping every project personal and purposeful.
+                visual concepts, and AI-assisted artwork. I enjoy
+                exploring different styles while keeping every
+                project personal and purposeful.
             </p>
 
         </div>
@@ -335,7 +359,8 @@
         </p>
 
         <p>
-            📧 <a href="mailto:ronalyncortez286@gmail.com">
+            📧
+            <a href="mailto:ronalyncortez286@gmail.com">
                 ronalyncortez286@gmail.com
             </a>
         </p>
