@@ -1,3 +1,6 @@
+Replace your entire `index.html` with the version below:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,23 +10,6 @@
     <title>RDigitals | Creative Portfolio</title>
 
     <style>
-        /* FALLING SNOW */
-.snow {
-    position: fixed;
-    top: -10px;
-    color: white;
-    font-size: 18px;
-    pointer-events: none;
-    z-index: 9999;
-    animation: fall linear forwards;
-    text-shadow: 0 0 5px #aaa;
-}
-
-@keyframes fall {
-    to {
-        transform: translateY(110vh) rotate(360deg);
-    }
-}
         * {
             box-sizing: border-box;
             margin: 0;
@@ -35,6 +21,57 @@
             background: #f7f5ef;
             color: #30332e;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* FALLING SNOW */
+        .snow {
+            position: fixed;
+            top: -20px;
+            color: white;
+            pointer-events: none;
+            z-index: 9999;
+            animation: fall linear forwards;
+            text-shadow: 0 0 5px #aaa;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        /* FLOATING LAVENDER FLOWERS */
+        .flower {
+            position: fixed;
+            bottom: -50px;
+            color: #b79ad8;
+            font-size: 22px;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.45;
+            animation: floatFlower linear forwards;
+            filter: blur(0.2px);
+        }
+
+        @keyframes floatFlower {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: 0.45;
+            }
+
+            50% {
+                transform: translateY(-50vh) translateX(25px) rotate(180deg);
+            }
+
+            100% {
+                transform: translateY(-115vh) translateX(-25px) rotate(360deg);
+                opacity: 0;
+            }
         }
 
         /* NAVIGATION */
@@ -389,27 +426,60 @@
     <footer>
         © 2026 RDigitals · Creative Portfolio
     </footer>
+
+
+    <!-- SNOW + FLOWERS -->
     <script>
-function createSnow() {
-    const snow = document.createElement("div");
 
-    snow.className = "snow";
-    snow.innerHTML = "❄";
+        /* SNOW */
+        function createSnow() {
+            const snow = document.createElement("div");
 
-    snow.style.left = Math.random() * 100 + "vw";
-    snow.style.fontSize = (10 + Math.random() * 15) + "px";
-    snow.style.opacity = 0.4 + Math.random() * 0.6;
-    snow.style.animationDuration = (5 + Math.random() * 7) + "s";
+            snow.className = "snow";
+            snow.innerHTML = "❄";
 
-    document.body.appendChild(snow);
+            snow.style.left = Math.random() * 100 + "vw";
+            snow.style.fontSize = (8 + Math.random() * 14) + "px";
+            snow.style.opacity = 0.3 + Math.random() * 0.7;
+            snow.style.animationDuration = (5 + Math.random() * 7) + "s";
 
-    setTimeout(() => {
-        snow.remove();
-    }, 12000);
-}
+            document.body.appendChild(snow);
 
-setInterval(createSnow, 250);
-</script>
+            setTimeout(() => {
+                snow.remove();
+            }, 13000);
+        }
+
+        setInterval(createSnow, 300);
+
+
+        /* LAVENDER FLOWERS */
+        function createFlower() {
+            const flower = document.createElement("div");
+
+            flower.className = "flower";
+
+            const flowers = ["✿", "❀", "✾", "❁"];
+
+            flower.innerHTML =
+                flowers[Math.floor(Math.random() * flowers.length)];
+
+            flower.style.left = Math.random() * 100 + "vw";
+            flower.style.fontSize = (14 + Math.random() * 14) + "px";
+            flower.style.animationDuration =
+                (10 + Math.random() * 8) + "s";
+
+            document.body.appendChild(flower);
+
+            setTimeout(() => {
+                flower.remove();
+            }, 19000);
+        }
+
+        setInterval(createFlower, 1800);
+
+    </script>
 
 </body>
 </html>
+```
