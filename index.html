@@ -3,108 +3,349 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rcotz | Creative Portfolio</title>
+
+    <title>Ronalyn Cortez | Creative Portfolio</title>
 
     <style>
-.hero {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-.hero img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-</style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f7f5ef;
+            color: #30332e;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        nav {
+            background: #f7f5ef;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #ddd9ce;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #30332e;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* HERO */
+        .hero {
+            width: 100%;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hero img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .hero-text {
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .hero-text h1 {
+            font-family: Georgia, serif;
+            font-size: 42px;
+            letter-spacing: 3px;
+            margin-bottom: 12px;
+        }
+
+        .hero-text p {
+            font-size: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 75px 8%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: Georgia, serif;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #77776f;
+            margin-bottom: 45px;
+        }
+
+        /* PORTFOLIO */
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1ded5;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 22px;
+        }
+
+        .card h3 {
+            font-family: Georgia, serif;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #77776f;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #62635c;
+            margin-top: 20px;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: #e9e6dc;
+        }
+
+        .contact p {
+            margin: 12px 0;
+        }
+
+        .contact a {
+            color: #30332e;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: #30332e;
+            color: white;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 600px) {
+
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .hero-text h1 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 55px 6%;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <header class="hero">
-    <img src="banner.png" alt="RCortz Creative Portfolio">
-    </header>
-
+    <!-- NAVIGATION -->
     <nav>
-        <a href="#home">Home</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+        <div class="logo">RCORTZ</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
 
-    <section id="home">
-        <h2>Welcome</h2>
 
-        <div class="about">
+    <!-- HOME -->
+    <header id="home">
+
+        <!-- YOUR CANVA BANNER -->
+        <div class="hero">
+            <img src="banner.png" alt="Ronalyn Cortez Creative Portfolio">
+        </div>
+
+        <div class="hero-text">
+            <h1>SET THE MOMENT.</h1>
+
             <p>
-                Welcome to my creative portfolio.
-                Here you can explore my Canva designs,
-                digital creations, and other projects.
+                Digital Invitations · Creative Design · AI Artistry
             </p>
         </div>
-    </section>
 
+    </header>
+
+
+    <!-- PORTFOLIO -->
     <section id="portfolio">
-        <h2>My Portfolio</h2>
+
+        <h2 class="section-title">Featured Works</h2>
+
+        <p class="section-subtitle">
+            A collection of creative ideas transformed into visual experiences.
+        </p>
 
         <div class="portfolio">
 
+            <!-- PROJECT 1 -->
             <div class="card">
-                <h3>🎨 Graphic Design</h3>
-                <p>Creative graphics and visual materials.</p>
+                <img src="invitation1.jpg" alt="Digital Invitation">
+                <div class="card-content">
+                    <h3>Digital Invitations</h3>
+                    <p>
+                        Elegant and personalized digital invitations
+                        created for special celebrations.
+                    </p>
+                </div>
             </div>
 
+            <!-- PROJECT 2 -->
             <div class="card">
-                <h3>💌 Invitations</h3>
-                <p>Event and invitation designs.</p>
+                <img src="ai-art1.jpg" alt="AI Artwork">
+                <div class="card-content">
+                    <h3>AI Artistry</h3>
+                    <p>
+                        Creative AI-assisted visuals, concepts,
+                        characters, and imaginative scenes.
+                    </p>
+                </div>
             </div>
 
+            <!-- PROJECT 3 -->
             <div class="card">
-                <h3>📱 Social Media</h3>
-                <p>Social media posts and promotional designs.</p>
+                <img src="design1.jpg" alt="Graphic Design">
+                <div class="card-content">
+                    <h3>Creative Design</h3>
+                    <p>
+                        Visual designs created for personal,
+                        social media, and creative projects.
+                    </p>
+                </div>
             </div>
 
+            <!-- PROJECT 4 -->
             <div class="card">
-                <h3>🛍️ Product Designs</h3>
-                <p>Product advertisements and promotional materials.</p>
-            </div>
-
-            <div class="card">
-                <h3>📄 Business Materials</h3>
-                <p>Professional office and business designs.</p>
-            </div>
-
-            <div class="card">
-                <h3>🖥️ Presentations</h3>
-                <p>Presentation and information materials.</p>
+                <img src="social1.jpg" alt="Social Media Design">
+                <div class="card-content">
+                    <h3>Social Media</h3>
+                    <p>
+                        Engaging visual content designed for
+                        digital platforms and online audiences.
+                    </p>
+                </div>
             </div>
 
         </div>
+
     </section>
 
+
+    <!-- ABOUT -->
     <section id="about">
-        <h2>About Me</h2>
 
         <div class="about">
+
+            <h2 class="section-title">About Me</h2>
+
             <p>
-                I am a detail-oriented professional with experience
-                in administrative work, digital design, and online
-                content creation.
+                I'm Ronalyn, a creative designer who enjoys turning
+                ideas into clean, meaningful, and visually engaging
+                designs.
             </p>
+
+            <p>
+                My work includes digital invitations, creative
+                visual concepts, Canva designs, and AI-assisted
+                artwork. I enjoy exploring different styles while
+                keeping every project personal and purposeful.
+            </p>
+
         </div>
+
     </section>
 
-    <section id="contact">
-        <h2>Contact</h2>
 
-        <div class="contact">
-            <p>Email: ronalyncortez286@email.com</p>
-        </div>
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+
+        <h2 class="section-title">Let's Create Something.</h2>
+
+        <p>
+            Have an idea, celebration, or creative project in mind?
+        </p>
+
+        <p>
+            📧 <a href="mailto:ronalyncortez286@gmail.com">
+                ronalyncortez286@gmail.com
+            </a>
+        </p>
+
     </section>
 
+
+    <!-- FOOTER -->
     <footer>
-        © 2026 Rcotz. All Rights Reserved.
+        © 2026 Ronalyn Cortez · Creative Portfolio
     </footer>
 
 </body>
